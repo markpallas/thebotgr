@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>*</pattern>
+    <template>Δεν έχω απάντηση σε αυτό το ερώτημα!</template>
+  </category>
+  
+ 
+</aiml>

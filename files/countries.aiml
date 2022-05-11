@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<category>
+      <pattern>Σχετικά με τις χώρες</pattern>
+      <template>Σου αρέσει η Ελλάδα?</template>  
+   </category>
+   
+   <category>
+      <pattern>Ναι</pattern>
+      <that>Σου αρέσει η Ελλάδα?</that>
+      <template>Ωραία και εμένα μου αρέσει η Ελλάδα.</template>
+   </category>
+   
+   <category>
+      <pattern>Όχι</pattern>
+      <that>Σου αρέσει η Ελλάδα?</that>
+      <template>Καλώς, αλλά εμένα μου αρέσει η Ελλάδα.</template>
+</category> 
+
+<category>
+    <pattern>Ποια είναι η πρωτεύουσα της χώρας <set>countries</set>^</pattern>
+    <template>Η πρωτεύουσα της χώρας <star/> είναι <map name="countries2capital"><star/></map>.
+    </template>
+</category>
+
+<category>
+ <pattern>Είναι η τοποθεσία <set>countries</set> χώρα?^</pattern>
+ <template>Ναι η τοποθεσία, <star/> είναι χώρα.</template>
+ </category>
+ 
+<category>
+ <pattern>Είναι η τοποθεσία * χώρα?^</pattern>
+ <template>Όχι δεν νομίζω ότι είναι.</template>
+</category>
+
+<category>
+    <pattern>Ποια είναι η πρωτεύουσα της χώρας *</pattern>
+    <template>Δεν έχω απάντηση για αυτό.</template>
+</category>
+
+
+ <category>
+      <pattern>Σχετικά με ταξίδια σε διάφορες χώρες</pattern>
+      <template>Ποια είναι η πιο ενδιαφέρουσα χώρα που έχεις παει?</template>  
+ </category>
+  <category>
+      <pattern>¨εχω πάει *</pattern>
+      <that>>Ποια είναι η πιο ενδιαφέρουσα χώρα που έχεις παει?</that>
+      <template>Ωραία μου αρέσει η χώρα <star/> και εμένα.</template>
+   </category>
+
+
+<category>
+      <pattern>Μου αρέσει *</pattern>
+      <template>
+         και εμένα μου αρέσει <star/>.
+      </template>
+   </category>
+   <category>
+      <pattern> Είναι η πόλη * πρωτεύουσα στην χώρα * </pattern>
+      <template>
+         Ναι η πόλη <star index = "1"/> είναι πρωτεύουσα <star index = "2"/>
+      </template>
+</category>
+ 
+<category>
+<pattern>Πες μου σχετικά για την χώρα *</pattern>
+<template>
+<think>
+<set name="countries">
+<star/>
+</set>
+</think>
+Ορίστε μερικές πληροφορίες!
+<formal>
+<star/>
+</formal>
+.
+<button>
+<text>Πάτησε Εδώ</text>
+<url>
+https://en.wikipedia.org/wiki/
+<star/>
+</url>
+</button>
+</template>
+</category>
+<category>
+<pattern>Δείξε μου τον χάρτη της χώρας *</pattern>
+<template>
+<think>
+<set name="countries">
+<star/>
+</set>
+</think>
+Ορίστε ο χάρτης της χώρας  
+<formal>
+ <star/>
+</formal>
+.
+<button>
+<text>Πάτησε Εδώ</text>
+<url>
+https://www.google.co.uk/maps?q=
+<star/>
+</url>
+</button>
+</template>
+</category>
+<category>
+<pattern>Πες μου για τον καιρό στην χώρα *</pattern>
+<template>
+<think>
+<set name="countries">
+<star/>
+</set>
+</think>
+Ελπίζω να είναι μι ακαλή μέρα στην χώρα
+<formal>
+<star/>
+</formal>
+.
+<button>
+<text>Πάτησε εδώ για την πρόγνωση</text>
+<url>
+https://www.weather-forecast.com/locations/
+<star/>
+/forecasts/latest
+</url>
+</button>
+</template>
+</category>
+<category>
+<pattern>Πες μου σχετικά με αυτό</pattern>
+<template>
+<condition name="it">
+<li value="*">
+<srai>
+Πες μου σχετικά με αυτό
+<get name="it"/>
+</srai>
+</li>
+<li>Να σου πω σχετικά με τι?</li>
+</condition>
+</template>
+</category>
+<category>
+<pattern>Εμφάνισε ένα χάρτη της χώρας</pattern>
+<template>
+<condition name="it">
+<li value="*">
+<srai>
+Εμφάνισε ένα χάρτη της χώρας
+<get name="it"/>
+</srai>
+</li>
+<li>¨Ενα χάρτη ποιας χώρας?</li>
+</condition>
+</template>
+</category>
+<category>
+<pattern>Πως είναι ο καιρός σε αυτή την χώρα</pattern>
+<template>
+<condition name="it">
+<li value="*">
+<srai>
+Πως είναι ο καιρός στην χώρα?
+<get name="it"/>
+</srai>
+</li>
+<li>Ο καιρός σε ποια χώρα?</li>
+</condition>
+</template>
+</category>
+<category>
+<pattern>*</pattern>
+<that>Πες μου σχετικά με αυτό</that>
+<template>
+<srai>
+Πες μου σχετικά με αυτό
+<star/>
+</srai>
+</template>
+</category>
+<category>
+<pattern>*</pattern>
+<that>Ένα χάρτη μιας χώρας</that>
+<template>
+<srai>
+Εμφάνισε τον χάρτη της χώρας
+<star/>
+</srai>
+</template>
+</category>
+<category>
+<pattern>*</pattern>
+<that>Πως είναι ο καιρός</that>
+<template>
+<srai>
+Πως είναι ο καιρός στην χώρα
+<star/>
+</srai>
+</template>
+</category>
+</aiml>

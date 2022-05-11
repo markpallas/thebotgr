@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+  <category>
+     <pattern>Σε ποια χώρα βρίσκεται η πόλη <set>poleis</set>^</pattern>
+     <template>H πόλη <star/>, βρίσκεται στην χώρα <map name="poleisxores"><star/></map>.
+     </template>
+ </category>
+ 
+ <category>
+      <pattern>Σχετικά με τις πόλεις</pattern>
+      <template>Σου αρέσει το Παρίσι?</template>  
+   </category>
+   
+   <category>
+      <pattern>Ναι</pattern>
+      <that>Σου αρέσει το Παρίσι?</that>
+      <template>Ωραία και εμένα μου αρέσει το Παρίσι.</template>
+   </category>
+   
+   <category>
+      <pattern>Όχι</pattern>
+      <that>Σου αρέσει το Παρίσι?</that>
+      <template>Καλώς, αλλά εμένα μου αρέσει το Παρίσι</template>
+</category> 
+
+<category>
+ <pattern>Είναι η τοποθεσία <set>poleis</set> πόλη?^</pattern>
+ <template>Ναι η τοποθεσία, <star/> είναι πόλη.</template>
+ </category>
+ 
+<category>
+ <pattern>Είναι η τοποθεσία * πόλη?^</pattern>
+ <template>Όχι δεν νομίζω ότι είναι.</template>
+</category>
+
+
+ <category>
+      <pattern>Σχετικά με ταξίδια σε διάφορες πόλεις</pattern>
+      <template>Ποια είναι η πιο ενδιαφέρουσα πόλη που έχεις παει?</template>  
+ </category>
+  <category>
+      <pattern>¨εχω πάει *</pattern>
+      <that>>Ποια είναι η πιο ενδιαφέρουσα πόλη που έχεις παει?</that>
+      <template>Ωραία μου αρέσει η πόλη <star/> και εμένα.</template>
+   </category>
+
+
+<category>
+      <pattern>Μου αρέσει *</pattern>
+      <template>
+         και εμένα μου αρέσει <star/>.
+      </template>
+   </category>
+   <category>
+      <pattern> Είναι η πόλη * πρωτεύουσα στην χώρα * </pattern>
+      <template>
+         Ναι η πόλη <star index = "1"/> είναι πρωτεύουσα <star index = "2"/>
+      </template>
+</category>
+
+<category>
+<pattern>Πες μου σχετικά για την πόλη *</pattern>
+<template>
+<think>
+<set name="poleis">
+<star/>
+</set>
+</think>
+Ορίστε μερικές πληροφορίες σχετικά με την πόλη 
+<formal>
+<star/>
+</formal>
+.
+<button>
+<text>Πάτησε Εδώ</text>
+<url>
+https://en.wikipedia.org/wiki/
+<star/>
+</url>
+</button>
+</template>
+</category>
+<category>
+<pattern>Δείξε μου τον χάρτη της πολης *</pattern>
+<template>
+<think>
+<set name="poleis">
+<star/>
+</set>
+</think>
+Ορίστε ο χάρτης της πόλης 
+<formal>
+<star/>
+</formal>
+.
+<button>
+<text>Πάτησε Εδώ</text>
+<url>
+https://www.google.co.uk/maps?q=
+<star/>
+</url>
+</button>
+</template>
+</category>
+<category>
+<pattern>Πες μου για τον καιρό στην πόλη *</pattern>
+<template>
+<think>
+<set name="poleis">
+<star/>
+</set>
+</think>
+Ελπίζω να είναι μι ακαλή μέρα στην πόλη
+<formal>
+<star/>
+</formal>
+.
+<button>
+<text>Πάτησε εδώ για την πρόγνωση</text>
+<url>
+https://www.weather-forecast.com/locations/
+<star/>
+/forecasts/latest
+</url>
+</button>
+</template>
+</category>
+<category>
+<pattern>Πες μου σχετικά με αυτό</pattern>
+<template>
+<condition name="it">
+<li value="*">
+<srai>
+Πες μου σχετικά με αυτό
+<get name="it"/>
+</srai>
+</li>
+<li>Να σου πω σχετικά με τι?</li>
+</condition>
+</template>
+</category>
+<category>
+<pattern>Εμφάνισε ένα χάρτη της πόλης</pattern>
+<template>
+<condition name="it">
+<li value="*">
+<srai>
+Εμφάνισε ένα χάρτη της πόλης
+<get name="it"/>
+</srai>
+</li>
+<li>¨Ενα χάρτη ποιας πόλης?</li>
+</condition>
+</template>
+</category>
+<category>
+<pattern>Πως είναι ο καιρός σε αυτή την πόλη?</pattern>
+<template>
+<condition name="it">
+<li value="*">
+<srai>
+Πως είναι ο καιρός στην πόλη?
+<get name="it"/>
+</srai>
+</li>
+<li>Ο καιρός σε ποια πόλη?</li>
+</condition>
+</template>
+</category>
+<category>
+<pattern>*</pattern>
+<that>Πες μου σχετικά με αυτό</that>
+<template>
+<srai>
+Πες μου σχετικά με αυτό
+<star/>
+</srai>
+</template>
+</category>
+<category>
+<pattern>*</pattern>
+<that>Ένα χάρτη μιας πόλης</that>
+<template>
+<srai>
+Εμφάνισε τον χάρτη της πόλης
+<star/>
+</srai>
+</template>
+</category>
+<category>
+<pattern>*</pattern>
+<that>Πως είναι ο καιρός</that>
+<template>
+<srai>
+Πως είναι ο καιρός στην πόλη
+<star/>
+</srai>
+</template>
+</category>
+</aiml>
+

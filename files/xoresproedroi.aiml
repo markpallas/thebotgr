@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+		<category>
+     <pattern>Ποιος είναι ο πρόεδρος για την χώρα<set>countries</set>^</pattern>
+     <template>Η χώρα <star/>, έχει πρόεδρο τον/την <map name="xoresproedroi"><star/></map>.
+     </template>
+ </category>
+ 
+ <category>
+     <pattern>Πες μου τον πρόεδρο για την χώρα<set>countries</set>^</pattern>
+     <template>Η χώρα <star/>, έχει πρόεδρο τον/την <map name="xoresproedroi"><star/></map>.
+     </template>
+ </category>
+</aiml>

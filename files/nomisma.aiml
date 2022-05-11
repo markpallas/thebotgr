@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	 <category>
+     <pattern>Ποιο είναι το νόμισμα της χώρας <set>countries</set>^</pattern>
+     <template>Η χώρα <star/>, έχει νόμισμα <map name="xoranomisma"><star/></map>.
+     </template>
+ </category>
+ 
+<category>
+    <pattern>Είναι το <set>nomisma</set> νόμισμα ^</pattern>
+    <template>Ναι, το <star/> είναι νόμισμα.</template>
+</category>
+ 
+<category>
+    <pattern>Είναι το  * νόμισμα ^</pattern>
+    <template>Όχι δεν νομίζω ότι είναι.</template>
+</category>
+
+<category>
+    <pattern>Πες μου για το νόμισμα <set>nomisma</set>^</pattern>
+    <template>Έχεις <star/>?</template>
+</category>
+
+<category>
+    <pattern>Ναι</pattern>
+    <template>Ωραία έχω και εγώ.</template>
+</category>
+
+<category>
+    <pattern>Έχω νομίσματα *</pattern>
+    <template>Έχω επίσης νομίσματα <star/>.</template>
+</category>
+
+<category>
+    <pattern> Είναι το  * νόμισμα της χώρας * </pattern>
+    <template>
+        Ναι <star index = "1"/> είναι νόμισμα της <star index = "2"/>
+    </template>
+</category>
+
+<category>
+<pattern>Δώσε μου πληροφορίες για το νόμισμα *</pattern>
+<template>
+<think>
+<set name="nomisma">
+<star/>
+</set>
+</think>
+Ορίστε μερικές πληροφορίες σχτικά με το 
+<formal>
+<star/>
+</formal>
+.
+<button>
+<text>Πάτησε εδώ</text>
+<url>
+https://en.wikipedia.org/wiki/
+<star/>
+</url>
+</button>
+</template>
+</category>
+</aiml>

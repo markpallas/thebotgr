@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<category>
+    <pattern>Πες μου πληροφορίες σχετικά με την χώρα <set>countries</set>^</pattern>
+    <template>Η πρωτεύουσα της χώρας <star/> είναι <map name="countries2capital"><star/></map>.
+    Η έκταση της χώρας <star/> είναι <map name="xoraarea"><star/></map>Km2.
+    <star/> και βρίσκεται στην ήπειρο <map name="xoresipeiroi"><star/></map>.
+    Tο πληθυσμός της χώρας <star/> είναι <map name="xoresplithismos"><star/></map> miliions.
+    Το νόμισμα της χώρας <star/> είναι <map name="xoranomisma"><star/></map>.
+    Τα αξιοθέατα της χώρας  <star/> είναι <map name="xoresmnimia"><star/></map>.
+    Ο προθυπυργός της χώρας <star/> είναι <map name="xoresprothipourgoi"><star/></map>.
+    </template>
+</category>
+</aiml>

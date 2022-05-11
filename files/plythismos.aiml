@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+	
+<category>
+     <pattern>Ποιος είναι ο πληθυσμός στην πόλη <set>poleis</set>^</pattern>
+     <template>Η πόλη <star/>, έχει πληθυσμό <map name="xoresplithismos"><star/></map> εκατομμύρια.
+     </template>
+ </category>
+ 
+ <category>
+     <pattern>Πες μου για τον πληθυσμό  στην πόλη<set>poleis</set>^</pattern>
+     <template>Η πόλη <star/>, έχει πληθυσμό <map name="xoresplithismos"><star/></map> εκατομμύρια.
+     </template>
+ </category>
+ 
+</aiml>
